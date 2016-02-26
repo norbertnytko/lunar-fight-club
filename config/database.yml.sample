@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: fight_club_development
+
+test:
+  <<: *default
+  database: fight_club_test
+
+production:
+  <<: *default
+  database: fight_club_production
+  username: fight_club
+  password: <%= ENV['CARS_DATABASE_PASSWORD'] %>
