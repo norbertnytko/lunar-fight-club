@@ -23,6 +23,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
   gem 'database_cleaner'
+  gem 'capybara'
 end
 
 group :development do
