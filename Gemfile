@@ -16,6 +16,8 @@ gem 'faker'
 gem 'decent_exposure'
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'draper'
+gem 'decent_decoration'
 
 
 group :development, :test do
