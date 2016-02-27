@@ -15,6 +15,7 @@ gem 'slim'
 gem 'faker'
 gem 'decent_exposure'
 gem 'bootstrap-sass'
+gem 'simple_form'
 
 
 group :development, :test do
