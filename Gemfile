@@ -18,6 +18,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'draper'
 gem 'decent_decoration'
+gem "cocoon"
 
 
 group :development, :test do
