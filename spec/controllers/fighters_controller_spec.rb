@@ -1,37 +1,32 @@
 require 'rails_helper'
 
 RSpec.describe FightersController, type: :controller do
-  subject(:fighter) { create :fighter }
+  let!(:fighter) { create :fighter }
 
   describe 'GET index' do
-    it 'renders the index template' do
-      get :index
-      expect(response).to render_template('index')
-    end
+    subject { get :index }
 
     it 'expose fighters' do
-      get :index
       expect(controller.fighters).to eq([fighter])
     end
+
+    it_behaves_like 'template rendering action', :index
   end
 
   describe 'GET #show 'do
-    it 'renders the #show view' do
-      get :show, id: fighter
-      expect(response).to render_template :show
-    end
+    subject { get :show, id: fighter }
 
     it 'expose requested fighter' do
-      get :show, id: fighter
+      subject
       expect(controller.fighter).to eq(fighter)
     end
+
+    it_behaves_like 'template rendering action', :show
   end
 
   describe 'GET #new 'do
-    it 'renders the :new template' do
-      get :new
-      expect(response).to render_template :new
-    end
+    subject { get :new }
+    it_behaves_like 'template rendering action', :new
   end
 
   describe 'POST #create' do
