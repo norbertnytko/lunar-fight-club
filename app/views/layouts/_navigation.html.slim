@@ -1,0 +1,13 @@
+nav.navbar.navbar-default.navbar-static-top role="navigation"
+  .container
+    .navbar-header
+      button.navbar-toggle data-target="#navigation" data-toggle="collapse" type="button"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to ENV["APP_NAME"], root_path, class: 'navbar-brand'
+    #navigation.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          = link_to 'figters', fighters_path
