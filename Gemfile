@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.3.0'
 
 gem 'rails', '4.2.5.1'
 gem 'pg'
@@ -35,5 +35,10 @@ group :development do
   gem 'better_errors'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'puma'
 end
 
