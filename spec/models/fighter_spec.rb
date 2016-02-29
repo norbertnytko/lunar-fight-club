@@ -24,6 +24,8 @@ RSpec.describe Fighter, type: :model do
 
   describe 'associations' do
     it { is_expected.to have_many(:skills).dependent(:destroy) }
+    it { is_expected.to have_many :fighter_fight }
+    it { is_expected.to have_many(:fights).through :fighter_fight }
     it 'has one avatar'
   end
 
