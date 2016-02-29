@@ -15,5 +15,7 @@ describe 'user check fighter details'  do
 
   it 'shows fighter score'
 
-  it 'lists fighter skills'
+  it 'lists fighter skills' do
+    expect(page).to have_content fighter.skills.pluck(:name).join("")
+  end
 end

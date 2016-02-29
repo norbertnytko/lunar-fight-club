@@ -1,2 +1,6 @@
 = fighter.name
 = fighter.description
+
+- if skills.any?
+  - skills.each do |skill|
+    = skill.name

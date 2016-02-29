@@ -1,5 +1,6 @@
 class FightersController < ApplicationController
   expose_decorated(:fighters)
+  expose(:skills) { fighter.skills }
   expose_decorated(:fighter, attributes: :fighter_params)
 
   def create
@@ -21,6 +22,9 @@ class FightersController < ApplicationController
   private
 
   def fighter_params
-    params.require(:fighter).permit(:first_name, :last_name, :description)
+    params.require(:fighter).permit(
+      :first_name, :last_name, :description,
+      skills_attributes: [:id, :name, :level, :_destroy]
+    )
   end
 end
