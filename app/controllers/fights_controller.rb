@@ -1,7 +1,7 @@
 class FightsController < ApplicationController
   expose(:fights)
   expose(:fight, attributes: :fight_params)
-  expose_decorated(:fighters) { fight.fighters}
+  expose_decorated(:fighters) { fight.fighters }
 
   def create
     if fight.save
