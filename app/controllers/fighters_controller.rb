@@ -23,7 +23,7 @@ class FightersController < ApplicationController
 
   def fighter_params
     params.require(:fighter).permit(
-      :first_name, :last_name, :description,
+      :first_name, :last_name, :description, :avatar,
       skills_attributes: [:id, :name, :level, :_destroy]
     )
   end
