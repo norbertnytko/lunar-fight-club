@@ -1,10 +1,9 @@
 class FightsController < ApplicationController
-  expose(:fights)
+  expose(:fights) { Fight.includes(:winner).includes(:losser) }
   expose(:fight, attributes: :fight_params)
-  expose(:fighters) { fight.fighters }
 
-  expose(:winner) { fight.winner }
-  expose(:losser) { fight.losser }
+  expose_decorated(:winner, decorator: FighterDecorator) { fight.winner }
+  expose_decorated(:losser, decorator: FighterDecorator) { fight.losser }
 
   def create
     if fight.save
