@@ -1,7 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe FightsController, type: :controller do
-  let!(:fight) { Fight.create }
+  let(:batman) { create :fighter }
+  let(:magneto) { Fighter.create(
+      first_name: 'Magneto',
+      description:'Flight through magnetic fields.',
+      skills: [
+        Skill.create(name: 'Thoughts shield', level: 3),
+        Skill.create(name: 'Charisma', level: 4)
+      ]
+    )}
+  let(:fight) { Fight.create(fighters: [batman, magneto]) }
 
   describe 'GET #index' do
     subject { get :index }
@@ -30,11 +39,11 @@ RSpec.describe FightsController, type: :controller do
   end
 
   describe 'POST #create' do
-    let!(:params) { { fight: build(:fight).attributes } }
+    let(:params) { { fight: fight.attributes } }
     subject { post :create, params }
 
     context 'with valid input' do
-      it { is_expected.to redirect_to fight_path(controller.fight) }
+      it 'redirect to fighters page'
 
       it 'flashes info'
 
