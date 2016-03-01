@@ -4,13 +4,24 @@
   .panel-body
     .row
       .col-md-3
-        | avatarhere
+        = image_tag fighter.avatar.url(:thumb)
       .col-md-9
         .row
           .col-md-12
             = fighter.description
-        - if skills.any?
-          - skills.each do |skill|
-            p
-              = skill.name
+        .row
+          .col-md-122
+            table.table
+              thead
+                tr
+                  th Skill
+                  th Skill Level
 
+              - if skills.any?
+                - skills.each do |skill|
+                  tbody
+                    tr
+                      td
+                        = skill.name
+                      td
+                        = skill.level

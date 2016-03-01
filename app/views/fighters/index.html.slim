@@ -1,15 +1,10 @@
-- if fighters.any?
-  - fighters.each do |fighter|
-    .panel.panel-default
-      .panel-body
-        .row
-          .col-md-4.text-center
-          /! Avatar placeholder
-          .col-md-8
-            .row
-              .col-md-12
-                h1
-                  = link_to fighter.name, fighter_path(fighter)
-            .row
-              .col-md-6
-                = fighter.description
+table.table
+  - if fighters.any?
+    - fighters.each do |fighter|
+      tr
+        td
+          = image_tag fighter.avatar.url(:thumb)
+        td
+          = link_to fighter.name, fighter_path(fighter)
+        td
+          = fighter.description

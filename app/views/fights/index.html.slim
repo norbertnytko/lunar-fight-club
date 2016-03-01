@@ -1,13 +1,14 @@
-- if fights.any?
-  - fights.each do |fight|
-    .panel.panel-default
-      .panel-body
-        .row
-          .col-md-12
-            .row
-              .col-md-6
-                h1 Winner
-                = fight.winner.decorate.name
-              .col-md-6
-                h1 Losser
-                = fight.losser.decorate.name
+table.table
+  thead
+    tr
+      th Winner
+      th Losser
+
+  - if fights.any?
+    - fights.each do |fight|
+      tbody
+        tr
+          td
+            = fight.winner.decorate.name
+          td
+            = fight.losser.decorate.name
