@@ -24,9 +24,9 @@ RSpec.describe Fighter, type: :model do
 
   describe 'associations' do
     it { is_expected.to have_many(:skills).dependent(:destroy) }
-    it { is_expected.to have_many :fighter_fight }
-    it { is_expected.to have_many(:fights).through :fighter_fight }
-    it 'has one avatar'
+    it { is_expected.to have_many :fighter_fights }
+    it { is_expected.to have_many(:fights).through :fighter_fights }
+    it { is_expected.to have_attached_file(:avatar) }
   end
 
 end
