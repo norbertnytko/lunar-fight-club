@@ -1,6 +1,5 @@
 puts 'Seeding...'
 
-intelect = Skill.create!(name: 'Genius-Level Intellect', level: 5)
 martial_arts = Skill.create!(name: 'Martial Arts', level: 5)
 physical_condition = Skill.create!(name: 'Enhanced Physical Condition', level: 3)
 
@@ -9,8 +8,7 @@ Fighter.create!(
   last_name: 'Wayne',
   description: "He's the hero Gotham deserves, but not the one it needs right now.",
   skills: [
-    martial_arts,
-    intelect,
+    Skill.create!(name: 'Martial Arts', level: 5),
     Skill.create!(name: "Kicking Superman's Ass", level: 5)
     ]
 )
@@ -41,14 +39,20 @@ Fighter.create!(
   first_name: 'Slade',
   last_name: 'Wilson',
   description: "The world's greatest assassin.",
-  skills: [martial_arts, Skill.create!(name:'Fencing', level: 4) ]
+  skills: [
+    Skill.create!(name: 'Martial Arts', level: 5),
+    Skill.create!(name:'Fencing', level: 4)
+  ]
 )
 
 Fighter.create!(
   first_name: 'Tony',
   last_name: 'Stark',
   description: 'Genius billionaire playboy philanthropist.',
-  skills: [intelect, Skill.create!(name: 'Iron Man suit', level: 3)]
+  skills: [
+    Skill.create!(name: 'Genius-Level Intellect', level: 5),
+    Skill.create!(name: 'Iron Man suit', level: 3)
+  ]
 )
 
 Fighter.create!(
