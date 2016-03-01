@@ -19,6 +19,7 @@ gem 'simple_form'
 gem 'draper'
 gem 'decent_decoration'
 gem "cocoon"
+gem "paperclip"
 
 
 group :development, :test do
