@@ -1,6 +1,16 @@
-= fighter.name
-= fighter.description
+.panel.panel-primary
+  .panel-heading
+    = fighter.name
+  .panel-body
+    .row
+      .col-md-3
+        | avatarhere
+      .col-md-9
+        .row
+          .col-md-12
+            = fighter.description
+        - if skills.any?
+          - skills.each do |skill|
+            p
+              = skill.name
 
-- if skills.any?
-  - skills.each do |skill|
-    = skill.name
