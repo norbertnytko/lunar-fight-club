@@ -8,16 +8,16 @@ class Fight < ActiveRecord::Base
   after_create :settle_fight
 
   validate do
-    if self.fighters[0] == self.fighters[1]
-      errors.add(:base, "Fighters must be different")
+    if fighters[0] == fighters[1]
+      errors.add(:base, 'Fighters must be different')
     end
   end
 
   private
 
   def settle_fight
-    first_fighter = self.fighters[0]
-    second_fighter = self.fighters[1]
+    first_fighter = fighters[0]
+    second_fighter = fighters[1]
 
 
     if first_fighter.power_level > second_fighter.power_level
