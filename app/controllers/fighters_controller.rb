@@ -1,5 +1,5 @@
 class FightersController < ApplicationController
-  expose_decorated(:fighters)
+  expose_decorated(:fighters) { Fighter.all.order(experience_points: :desc) }
   expose(:skills) { fighter.skills }
   expose_decorated(:fighter, attributes: :fighter_params)
 
