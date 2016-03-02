@@ -43,10 +43,6 @@ RSpec.describe FightsController, type: :controller do
     subject { post :create, params }
 
     context 'with valid input' do
-      it 'redirect to fighters page'
-
-      it 'flashes info'
-
       it 'creates student' do
         expect{ subject }.to change(Fight, :count).by(1)
       end

@@ -36,9 +36,7 @@ RSpec.describe FightersController, type: :controller do
     context 'with valid input' do
       it { is_expected.to redirect_to fighter_path(controller.fighter) }
 
-      it 'flashes info'
-
-      it 'creates student' do
+      it 'creates fighter' do
         expect{ subject }.to change(Fighter, :count).by(1)
       end
     end
