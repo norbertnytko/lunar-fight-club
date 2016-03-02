@@ -24,9 +24,7 @@ class Fighter < ActiveRecord::Base
   end
 
   def power_level
-    skills_levels = skills.pluck(:level)
-
-    skills_levels_sum = skills_levels.inject(0) do |sum, x|
+    skills_levels_sum = skills.pluck(:level).inject(0) do |sum, x|
       sum + x
     end
 
