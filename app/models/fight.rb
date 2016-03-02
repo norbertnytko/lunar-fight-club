@@ -24,18 +24,12 @@ class Fight < ActiveRecord::Base
       first_fighter.gain_winner_experience!
       second_fighter.gain_losser_experience!
 
-      first_fighter.save
-      second_fighter.save
-
       self.winner = first_fighter
       self.losser = second_fighter
       self.save
     else
       second_fighter.gain_winner_experience!
       first_fighter.gain_losser_experience!
-
-      first_fighter.save
-      second_fighter.save
 
       self.winner = second_fighter
       self.losser = first_fighter

@@ -33,9 +33,11 @@ class Fighter < ActiveRecord::Base
 
   def gain_winner_experience!
     self.experience_points += 3
+    self.save
   end
 
   def gain_losser_experience!
     self.experience_points += 1
+    self.save
   end
 end
