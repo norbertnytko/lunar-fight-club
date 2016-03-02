@@ -18,9 +18,9 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'draper'
 gem 'decent_decoration'
-gem "cocoon"
-gem "paperclip"
-
+gem 'cocoon'
+gem 'paperclip'
+gem 'aws-sdk-v1'
 
 group :development, :test do
   gem 'byebug'
@@ -37,6 +37,7 @@ group :development do
   gem 'better_errors'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'figaro'
 end
 
 group :production do
