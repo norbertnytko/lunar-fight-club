@@ -13,7 +13,13 @@ describe 'user check fighter details'  do
     expect(page).to have_content fighter.description
   end
 
-  it 'shows fighter score'
+  it 'shows fighter experience' do
+    expect(page).to have_content fighter.experience_points
+  end
+
+  it 'shows fighter power level' do
+    expect(page).to have_content fighter.power_level
+  end
 
   it 'lists fighter skills' do
     expect(page).to have_content fighter.skills.pluck(:name, :level).join("")
