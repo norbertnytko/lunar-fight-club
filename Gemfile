@@ -29,6 +29,7 @@ group :development, :test do
   gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 group :development do
