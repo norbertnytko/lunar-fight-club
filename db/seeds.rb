@@ -10,7 +10,9 @@ Fighter.create!(
   skills: [
     Skill.create!(name: 'Martial Arts', level: 5),
     Skill.create!(name: "Kicking Superman's Ass", level: 5)
-    ]
+    ],
+  avatar_file_name: 'batman.png',
+  avatar_content_type: 'image/png'
 )
 
 Fighter.create!(
@@ -19,7 +21,10 @@ Fighter.create!(
   skills: [
     Skill.create!(name: 'Being Crazy', level: 5),
     Skill.create!(name: 'Hurting realy, realy bad!', level: 1)
-  ]
+  ],
+  avatar_file_name: 'joker.jpg',
+  avatar_content_type: 'image/jpeg'
+
 )
 
 Fighter.create!(
@@ -32,7 +37,9 @@ Fighter.create!(
   skills: [
     Skill.create!(name: 'Heat vision', level: 5),
     Skill.create!(name: 'Flight', level: 2),
-    ]
+    ],
+  avatar_file_name: 'superman.jpg',
+  avatar_content_type: 'image/jpeg'
 )
 
 Fighter.create!(
@@ -42,7 +49,11 @@ Fighter.create!(
   skills: [
     Skill.create!(name: 'Martial Arts', level: 5),
     Skill.create!(name:'Fencing', level: 4)
-  ]
+  ],
+  avatar_file_name: 'deathstroke.jpg',
+  avatar_content_type: 'image/jpeg'
+
+
 )
 
 Fighter.create!(
@@ -52,12 +63,16 @@ Fighter.create!(
   skills: [
     Skill.create!(name: 'Genius-Level Intellect', level: 5),
     Skill.create!(name: 'Iron Man suit', level: 3)
-  ]
+  ],
+  avatar_file_name: 'ironman.jpg',
+  avatar_content_type: 'image/jpeg'
 )
 
 Fighter.create!(
   first_name: 'Steven',
   last_name: 'Rogers',
   description: 'The first Avenger!',
-  skills: [physical_condition, martial_arts]
+  skills: [physical_condition, martial_arts],
+  avatar_file_name: 'captainamerica.jpg',
+  avatar_content_type: 'image/jpeg'
 )
