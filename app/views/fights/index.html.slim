@@ -3,6 +3,7 @@ table.table
     tr
       th Winner
       th Losser
+      th Details
 
   - if fights.any?
     - fights.each do |fight|
@@ -12,3 +13,5 @@ table.table
             = fight.winner.decorate.name
           td
             = fight.losser.decorate.name
+          td
+            = link_to 'Show', fight_path(fight)

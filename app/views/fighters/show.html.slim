@@ -1,6 +1,8 @@
 .panel.panel-primary
   .panel-heading
-    = fighter.name
+    .row
+      .col-md-12
+        = fighter.name
   .panel-body
     .row
       .col-md-3
@@ -8,9 +10,10 @@
       .col-md-9
         .row
           .col-md-12
-            = fighter.description
+            blockquote
+              p = fighter.description
         .row
-          .col-md-122
+          .col-md-12
             table.table
               thead
                 tr
@@ -25,3 +28,22 @@
                         = skill.name
                       td
                         = skill.level
+        .row
+          .col-md-12
+            table.table
+              thead
+                tr
+                  th Fights total
+                  th Wins
+                  th Experience
+                  th Power level
+              tbody
+                tr
+                  td
+                    = fighter.number_of_fights
+                  td
+                    = fighter.number_of_wins
+                  td
+                    = fighter.experience_points
+                  td
+                    = fighter.power_level

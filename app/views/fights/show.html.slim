@@ -1,5 +1,34 @@
-- if winner
-  = winner.first_name
+.row
+  .col-md-6
+    .panel.panel-primary
+      .panel-heading Winner
+      .panel-body
+        table.table
+          thead
+            th Name
+            th Experience
+            th Power level
+          tbody
+            td
+              = winner.name
+            td
+              = winner.experience_points
+            td
+              = winner.power_level
 
-- if losser
-  = losser.first_name
+  .col-md-6
+    .panel.panel-default
+      .panel-heading Losser
+      .panel-body
+        table.table
+          thead
+            th Name
+            th Experience
+            th Power level
+          tbody
+            td
+              = losser.name
+            td
+              = losser.experience_points
+            td
+              = losser.power_level

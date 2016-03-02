@@ -1,10 +1,26 @@
 table.table
+  thead
+    tr
+      th Avatar
+      th Name
+      th Description
+      th Wins
+      th Fights
+      th Experience
+
   - if fighters.any?
     - fighters.each do |fighter|
-      tr
-        td
-          = image_tag fighter.avatar.url(:thumb)
-        td
-          = link_to fighter.name, fighter_path(fighter)
-        td
-          = fighter.description
+      tbody
+        tr
+          td
+            = image_tag fighter.avatar.url(:thumb)
+          td
+            = link_to fighter.name, fighter_path(fighter)
+          td
+            = fighter.description
+          td
+            = fighter.number_of_wins
+          td
+            = fighter.number_of_fights
+          td
+            = fighter.experience_points
